@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Self Assessment</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <style>
+      html, body {
+      min-height: 100%;
+      }
+      body, div, form, input, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 20px;
+      color: #666;
+      line-height: 28px;
+      }
+      h1, h4 {
+      font-weight: 400;
+      font-size: 25px;
+      }
+      h4 {
+      margin: 25px 0 5px;
+      color: blue;
+      }
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 3px;
+      }
+      form {
+      width: 100%;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 2px 5px #ccc; 
+      }
+      input {
+      width: auto;
+      margin-right: 15px;
+      vertical-align: middle;
+      }
+      .question-answer label {
+      display: block;
+      }
+      .btn-block {
+      margin-top: 20px;
+      text-align: center;
+      }
+      button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      -webkit-border-radius: 5px; 
+      -moz-border-radius: 5px; 
+      border-radius: 5px; 
+      background-color: #095484;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background-color: #0666a3;
+      }
+    </style>
+  </head>
+  <body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div class="testbox">
+      <form action="{{url_for('selftest') }}" method="post">
+        <h1>Self Assessment Survey</h1>
+        <div>
+          <h4>Did you experience fever/cough/shortage of breath in past 14 days?</h4>
+          <div class="question-answer">
+            <label><input type="checkbox" value="50" name="meet"/>Yes</label>
+            <label><input type="checkbox" value="0" name="meet"/>No</label>
+            </div>
+        </div>
+        <div>
+          <h4>Do you suffer from any of the following?</h4>
+          <div class="question-answer">
+            <label><input type="checkbox" value="35" name="meet"/>Cancer</label>
+            <label><input type="checkbox" value="35" name="meet"/>Respiratory issues</label>
+            <label><input type="checkbox" value="35" name="meet"/>Cardiac issues</label>
+            <label><input type="checkbox" value="0" name="meet"/>None of the above</label>
+          </div>
+        </div>
+         <div>
+          <h4>Which of the following applies to you?</h4>
+          <div class="question-answer">
+            <label><input type="checkbox" value="45" name="meet"/>I have recently interacted or lived with someone who has tested positive for COVID 19</label>
+            <label><input type="checkbox" value="45" name="meet"/>I am a healthcare worker and I examined a COVID 19 confirmed case without protective gear</label>
+            <label><input type="checkbox" value="0" name="meet"/>None of the above</label>
+          </div>
+          </div>
+        <div>
+          <h4>Have you undertaken international travel in past 28-45 days?</h4>
+          <div class="question-answer">
+            <label><input type="checkbox" value="30" name="meet"/>Yes</label>
+            <label><input type="checkbox" value="0" name="meet"/>No</label>
+          </div>
+        </div>
+        <div>
+        <div class="btn-block">
+          <button type="submit" href="/">Submit</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

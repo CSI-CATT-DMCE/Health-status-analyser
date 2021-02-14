@@ -1,0 +1,17 @@
+{% extends "layout.html"%}
+{% block content %}
+
+
+<div class="conainer m-4">
+    <div class="row justify-content-center">
+        <div class="card bg-info text-white col-md-10 align-self-center p-4">
+            <div class="card-body">
+            <h5 class="card-title font-weight-bold text-monospace">Self Assessment Test</h5>
+            <p class="card-text">Self Assessment Test will help you get right guidance according to your symptoms.</p>
+            <a href="{{ url_for('assess')}}" class="btn btn-primary">Take Self Assessment Test</a>
+            </div>
+        </div>
+    </div>
+</div>    
+
+{% endblock content %}
