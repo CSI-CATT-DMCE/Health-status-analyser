@@ -65,11 +65,10 @@ def selftest():
     resp = request.form.getlist('meet')
     for i in resp:
         comp.append(int(i))
-    x = sum(comp)
-    print(x)
-    if x>=50:
+    result = sum(comp)
+    if result >= 50:
         return render_template("highrisk.html")
-    elif x<50:
+    elif result < 50:
         return render_template("lowrisk.html")	
 
 
