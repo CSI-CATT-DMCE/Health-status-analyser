@@ -3,6 +3,7 @@ from app import app, db, bcrypt
 from app.forms import RegistrationForm, LoginForm
 from app.models import User
 from flask_login import login_user, current_user, logout_user
+import sqlite3 as sql
 
 @app.route("/")
 @app.route("/home")
