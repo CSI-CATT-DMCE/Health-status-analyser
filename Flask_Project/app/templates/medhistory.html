@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Medical history</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='medhistory.css')}}">
+  </head>
+  <body>
+    <div class="main-block">
+      <h1>Medical history</h1>
+      <form>
+        <div class="info">
+          <div class="info-item">
+            <label class="icon" for="name"><i class="fas fa-user"></i></label>
+            <input type="text" name="name"id="name" placeholder="Name" required/>
+          </div>
+          <div  class="info-item">
+            <label class="icon" for="age"><i class="fas fa-calendar"></i></i></label>
+            <input type="text" name="age" id="age" placeholder="Age" required/>
+          </div>
+          <div  class="info-item">
+            <label class="icon" for="email"><i class="fas fa-envelope"></i></label>
+            <input type="text" name="email" id="email" placeholder="Email" required/>
+          </div>
+          <div  class="info-item">
+            <label class="icon" for="phone"><i class="fas fa-phone"></i></label>
+            <input type="text" name="phone"id="phone" placeholder="Phone" required/>
+          </div>
+         <div class="info-item">
+           <label class="icon" for="heartbeat"><i class="fas fa-heartbeat"></i></label>
+            <input type="text" name="blood" id="phone" placeholder="Blood group" required/>
+         </div>
+         <div class="info-item">
+           <label class="icon" for="heartbeat"><i class="fas fa-user-alt"></i></label>
+            <input type="text" name="gender" id="phone" placeholder="Gender" required/>
+         </div>
+        </div>
+        <div class="grade-type">
+        <h3>Which of the following comorbidities you have :</h3>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Diabetes" name="diab"id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Diabetes
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Hypertension"name="diab" id="flexCheckChecked" checked>
+            <label class="form-check-label" for="flexCheckChecked">
+              Hypertension
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Obesity"   name="diab" id="flexCheckChecked" checked>
+            <label class="form-check-label" for="flexCheckChecked">
+              Obesity
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Cardiovascular disease" name="diab" id="flexCheckChecked" checked>
+            <label class="form-check-label" for="flexCheckChecked">
+              Cardiovascular disease
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Stroke" name="diab" id="flexCheckChecked" checked>
+            <label class="form-check-label" for="flexCheckChecked">
+              Stroke
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Asthma" name="diab" id="flexCheckChecked" checked>
+            <label class="form-check-label" for="flexCheckChecked">
+              Asthma
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Parkinsons disease" name="diab" id="flexCheckChecked" checked>
+            <label class="form-check-label" for="flexCheckChecked">
+              Parkinsons disease
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Cancer" name="diab" id="flexCheckChecked" checked>
+            <label class="form-check-label" for="flexCheckChecked">
+              Cancer
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Sickle cell disease" name="diab" id="flexCheckChecked" checked>
+            <label class="form-check-label" for="flexCheckChecked">
+              Sickle cell disease
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Chronic kidney disease" name="diab" id="flexCheckChecked" checked>
+            <label class="form-check-label" for="flexCheckChecked">
+              Chronic kidney disease
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Thalassemia"name="diab" id="flexCheckChecked" checked>
+            <label class="form-check-label" for="flexCheckChecked">
+              Thalassemia
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Liverdisease" name="diab" id="flexCheckChecked" checked>
+            <label class="form-check-label" for="flexCheckChecked">
+              Liver disease
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Down syndrome" name="diab" id="flexCheckChecked" checked>
+            <label class="form-check-label" for="flexCheckChecked">
+              Down syndrome
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Compromised immune system" name="diab" id="flexCheckChecked" checked>
+            <label class="form-check-label" for="flexCheckChecked">
+              Compromised immune system
+            </label>
+          </div>
+          <h3>Any other specifications you would like to mention</h3>
+          <textarea rows="4"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
