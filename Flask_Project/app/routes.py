@@ -71,4 +71,7 @@ def selftest():
     elif result < 50:
         return render_template("lowrisk.html")	
 
+@app.route("/medicalhistory",methods=["GET","POST"])
+def medhistory():
+    return render_template('medhistory.html',title='Medical history')
 
