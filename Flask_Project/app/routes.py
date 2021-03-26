@@ -71,7 +71,27 @@ def selftest():
     elif result < 50:
         return render_template("lowrisk.html")	
 
-@app.route("/medicalhistory",methods=["GET","POST"])
+@app.route("/medicalhistory")
 def medhistory():
     return render_template('medhistory.html',title='Medical history')
+@app.route("/meddata",methods=["GET","POST"])
+def meddata():
+    name = request.form["name"]
+    age = request.form["age"]
+    email = request.form["email"]
+    phone = request.form["phone"]
+    blood = request.form["blood"]
+    gender = request.form["gender"]
+    comor = request.form["diab"]
+    specs = request.form["specs"]
+    age = int(age)
+    phone = int(phone)
+    with sql.connect("medhistory.db") as con:
+        cur = con.cursor()
+        cur.execute("INSERT INTO history(name,age,email,phone,blood,gender,comor,specs) VALUES(?,?,?,?,?,?,?,?)",
+                    (name,age,email,phone,blood,gender,comor,specs))
+        con.commit()
+    flash('Details recorded successfully','success')
+    return render_template("dashboard.html")
+    con.close()
 
