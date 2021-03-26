@@ -9,7 +9,7 @@
   <body>
     <div class="main-block">
       <h1>Medical history</h1>
-      <form>
+      <form action="{{url_for('meddata')}}" method="post">
         <div class="info">
           <div class="info-item">
             <label class="icon" for="name"><i class="fas fa-user"></i></label>
@@ -29,102 +29,62 @@
           </div>
          <div class="info-item">
            <label class="icon" for="heartbeat"><i class="fas fa-heartbeat"></i></label>
-            <input type="text" name="blood" id="phone" placeholder="Blood group" required/>
+            <input type="text" name="blood" id="blood" placeholder="Blood group" required/>
          </div>
          <div class="info-item">
            <label class="icon" for="heartbeat"><i class="fas fa-user-alt"></i></label>
-            <input type="text" name="gender" id="phone" placeholder="Gender" required/>
+            <input type="text" name="gender" id="gender" placeholder="Gender" required/>
          </div>
         </div>
         <div class="grade-type">
-        <h3>Which of the following comorbidities you have :</h3>
+        <h3>List of comorbidities :</h3>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="Diabetes" name="diab"id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-              Diabetes
-            </label>
+           <li>Diabetes</li>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="Hypertension"name="diab" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-              Hypertension
-            </label>
+           <li>Hypertension</li>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="Obesity"   name="diab" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-              Obesity
-            </label>
+           <li>Obesity</li>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="Cardiovascular disease" name="diab" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-              Cardiovascular disease
-            </label>
+            <li>Cardiovascular disease</li>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="Stroke" name="diab" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-              Stroke
-            </label>
+           <li>Stroke</li>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="Asthma" name="diab" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-              Asthma
-            </label>
+            <li>Asthma</li>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="Parkinsons disease" name="diab" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-              Parkinsons disease
-            </label>
+            <li>Parkinsons disease</li>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="Cancer" name="diab" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-              Cancer
-            </label>
+            <li>Cancer</li>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="Sickle cell disease" name="diab" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-              Sickle cell disease
-            </label>
+            <li>Sickle cell disease</li>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="Chronic kidney disease" name="diab" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-              Chronic kidney disease
-            </label>
+            <li>Chronic kidney disease</li>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="Thalassemia"name="diab" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-              Thalassemia
-            </label>
+            <li>Thalessemia</li>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="Liverdisease" name="diab" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-              Liver disease
-            </label>
+            <li>Liver disease</li>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="Down syndrome" name="diab" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-              Down syndrome
-            </label>
+            <li>Down syndrome</li>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="Compromised immune system" name="diab" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-              Compromised immune system
-            </label>
+            <li>Compromised immune system</li>
           </div>
+          <h3>Mention below if you suffer from any of the comorbidities given above</h3>
+          <textarea name="diab" rows="4"></textarea>
           <h3>Any other specifications you would like to mention</h3>
-          <textarea rows="4"></textarea>
-        <button type="submit">Submit</button>
+          <textarea name="specs" rows="4"></textarea>
+          <button type="Submit">Submit</button>
       </form>
     </div>
   </body>
