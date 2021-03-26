@@ -1,0 +1,119 @@
+ <style>
+      html, body 
+      {
+            height: 100%;
+      }
+      body, h1, h3, input 
+      { 
+            padding: 0;
+            margin: 0;
+            outline: none;
+            font-family: Roboto, Arial, sans-serif;
+            font-size: 20px;
+            color: #666;
+      }
+      h1, h3 
+      {
+            padding: 12px 0;
+            font-weight: 400;
+      }
+      h1 
+      {
+            font-size: 28px;
+      }
+      .main-block, .info 
+      {
+            display: flex;
+            flex-direction: column;
+      }
+      .main-block 
+      {
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            min-height: 100%;
+            background: url("/uploads/media/default/0001/01/49bff73f282c2c21f3341f1fe457fe35337b1792.jpeg") no-repeat center;
+            background-size: cover;
+      }
+      form 
+      {
+            width: 86%; 
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px; 
+            border: solid 1px #ccc;
+            box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+            background: #ebebeb; 
+      }
+      .info-item 
+      {
+            width: 50%;
+      }
+      input 
+      {
+            width:50%;
+            height: 40px;
+            padding-left: 10px; 
+            margin: 0 0 12px -5px;
+            border-radius: 0 5px 5px 0;
+            border: solid 1px #cbc9c9;
+            box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+            background: #fff; 
+      }
+      input.form-check-input
+      {
+            width:10%;
+            height:20px;
+      }
+      label.form-check-label
+      {
+            height:40px;
+      }
+      .icon 
+      {
+            padding: 9px 15px;
+            margin-top: -1px;
+            border-radius: 5px 0 0 5px;
+            border: solid 0px #cbc9c9;
+            background: #666;
+            color: #fff;
+      }
+      
+      textarea 
+      {
+            width: 99%;
+            margin-bottom: 12px;
+      }
+      button 
+      {
+            width: 50%;
+            padding: 8px;
+            border-radius: 5px; 
+            border: none;
+            background: #8ebf42; 
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+      }
+      button:hover 
+      {
+            background: #82b534;
+      }
+      .grade-type div 
+      {
+            display:flex;
+            margin: 6px 0;
+      }
+      @media (min-width: 568px) 
+      {
+            .info 
+            {     
+                  flex-flow: row wrap;
+                  justify-content: space-between;
+            }
+            .info-item 
+            {
+                  width: 50%;
+            }
+      }
+    </style>
