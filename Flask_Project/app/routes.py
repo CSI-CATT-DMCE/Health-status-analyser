@@ -74,6 +74,7 @@ def selftest():
 @app.route("/medicalhistory")
 def medhistory():
     return render_template('medhistory.html',title='Medical history')
+
 @app.route("/meddata",methods=["GET","POST"])
 def meddata():
     name = request.form["name"]
