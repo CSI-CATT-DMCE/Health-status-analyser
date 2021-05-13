@@ -1,0 +1,41 @@
+{% extends "layout.html"%}
+{% block content %}
+<div class="conainer m-4">
+    <div class="row justify-content-center">
+        <div class="card bg-info text-white col-md-10 align-self-center p-4">
+            <div class="card-body">
+            <form action="{{url_for('admincheck')}}" method="post">
+                <h5 class="card-title font-weight-bold text-monospace">Enter patient id whose details you want to see</h5>
+                <input type="text" name="patientid" placeholder="Enter id">
+                <button type="submit" style="width:25% "class="btn btn-primary">View profile</a>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>  
+<div class="conainer m-4">
+    <div class="row justify-content-center">
+        <div class="card bg-info text-white col-md-10 align-self-center p-4">
+            <div class="card-body">
+            <form action="{{url_for('viewdata')}}" method="post">
+                <h5 class="card-title font-weight-bold text-monospace">Enter disease name</h5>
+                <input type="text" name="diag" style="border-radius:50px">
+                <button type="submit" style="width:25% border-radius:50px"class="btn btn-primary">View statistics</a>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="conainer m-4">
+    <div class="row justify-content-center">
+        <div class="card bg-info text-white col-md-10 align-self-center p-4">
+           <div class="card-body">
+            <h5 class="card-title font-weight-bold text-monospace">Diagnosis</h5>
+            <p class="card-text">Add patient diagnosis</p>
+            <a href="{{ url_for('diagnosis')}}" class="btn btn-primary">Click here</a>
+            </div>
+        </div>
+    </div>
+</div>          
+
+{% endblock content %}
