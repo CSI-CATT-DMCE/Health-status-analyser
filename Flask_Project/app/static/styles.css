@@ -1,4 +1,4 @@
-.register-photo, .login-photo {
+.register-photo, .login-photo, .docregister-photo, .doclogin-photo {
   background: #f1f7fc;
   padding: 80px 0;
 }
@@ -10,7 +10,7 @@
   background-size: cover;
 }
 
-.register-photo .form-container, .login-photo .form-container {
+.register-photo .form-container, .login-photo .form-container, .docregister-photo .form-container, .doclogin-photo .form-container {
   display: table;
   max-width: 1200px;
   width: 90%;
@@ -18,7 +18,7 @@
   box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
 }
 
-.register-photo form, .login-photo form {
+.register-photo form, .login-photo form, .docregister-photo form, .doclogin-photo form {
   display: table-cell;
   width: 400px;
   background-color: #ffffff;
@@ -27,18 +27,18 @@
 }
 
 @media (max-width:991px) {
-  .register-photo form, .login-photo form {
+  .register-photo form, .login-photo form, .docregister-photo form, .doclogin-photo form {
     padding: 40px;
   }
 }
 
-.register-photo form h2 , .login-photo form h2 {
+.register-photo form h2 , .login-photo form h2, .docregister-photo form h2 , .doclogin-photo form h2{
   font-size: 24px;
   line-height: 1.5;
   margin-bottom: 30px;
 }
 
-.register-photo form .form-control, .login-photo form .form-control {
+.register-photo form .form-control, .login-photo form .form-control, .docregister-photo form .form-control, .doclogin-photo form .form-control {
   background: #f7f9fc;
   border: none;
   border-bottom: 1px solid #dfe7f1;
@@ -50,13 +50,13 @@
   height: 40px;
 }
 
-.register-photo form .form-check , .register-photo form .form-check{
+.register-photo form .form-check , .register-photo form .form-check, .docregister-photo form .form-check , .docregister-photo form .form-check{
   font-size: 13px;
   line-height: 20px;
 }
 
 
-.register-photo  .btn-primary , .login-photo  .btn-primary{
+.register-photo  .btn-primary , .login-photo  .btn-primary, .docregister-photo  .btn-primary , .doclogin-photo  .btn-primary{
   background: #f4476b;
   border: none;
   border-radius: 4px;
@@ -67,15 +67,15 @@
   outline: none !important;
 }
 
-.register-photo form .btn-primary:hover, .register-photo form .btn-primary:active, .login-photo form .btn-primary:hover, .login-photo form .btn-primary:active {
+.register-photo form .btn-primary:hover, .register-photo form .btn-primary:active, .login-photo form .btn-primary:hover, .login-photo form .btn-primary:active , .docregister-photo form .btn-primary:hover, .docregister-photo form .btn-primary:active, .doclogin-photo form .btn-primary:hover, .doclogin-photo form .btn-primary:active{
   background: #eb3b60;
 }
 
-.register-photo form .btn-primary:active , .login-photo form .btn-primary:active {
+.register-photo form .btn-primary:active , .login-photo form .btn-primary:active , .docregister-photo form .btn-primary:active , .doclogin-photo form .btn-primary:active{
   transform: translateY(1px);
 }
 
-.register-photo form .already , .register-photo form .already{
+.register-photo form .already , .docregister-photo form .already{
   
   text-align: center;
   font-size: 12px;
@@ -92,6 +92,20 @@
   display: table-cell;
   width: auto;
   background: url('/static/4205547.jpg');
+  background-size: cover;
+}
+
+.doclogin-photo .image-holder {
+  display: table-cell;
+  width: auto;
+  background: url('/static/3568984.jpg');
+  background-size: cover;
+}
+
+.docregister-photo .image-holder {
+  display: table-cell;
+  width: auto;
+  background: url('/static/docregister.jpg');
   background-size: cover;
 }
 
