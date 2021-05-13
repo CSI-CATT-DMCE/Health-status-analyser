@@ -1,6 +1,22 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="container">
-    <h3>Welcome</h3>    
+    <div class="container"style="background-color:#29bb89;color:white;padding:50px;">
+        <table cellspacing="25px">
+          <tr>
+
+            <td><h1 style="font-family: 'Comfortaa', cursive;font-size:60px;"><i>Welcome to Unicare!!!</i></h1>
+            <hr>
+                  <ul>
+                  <li><p style="font-family: 'Roboto', sans-serif;font-size:20px">A platform for safe and efficient storage of all your medical history</p></li>
+                  <li><p style="font-family: 'Roboto', sans-serif;font-size:20px">We aim to record and analyze your medical records so as to increase the standard and effectiveness of your healthcare services so as to provide better services.</p> </li>
+                  </ul>
+			</td>
+            <td>
+              <img src="{{url_for('static', filename='home.jpg')}}" alt="not availabel"width="600"height="400">
+            </td>
+            </tr>
+        </table>
+    </div>   
 </div>    
 {% endblock content %}
