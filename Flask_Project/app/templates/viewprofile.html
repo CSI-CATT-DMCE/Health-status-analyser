@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>View profile</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+  table
+  {
+    font-size: 20px;
+  }
+  .card
+  {
+    width:350px;
+    font-size: 20px;
+    display: inline-block;
+  }
+</style>
+</head>
+<body style="background-color:  #e6f9ff">
+  <div class="container ">
+  <table class="table table-bordered table-striped table-hover" style="height:100px">
+  <br /><br />
+  <h1 style="color: black">Your profile</h1>
+    <tr>
+        <th>Patient ID</th>
+        <th>Patient Name</th>
+        <th>Age</th>
+        <th>Email id</th>
+        <th>Phone Number</th>
+        <th>Blood Group</th>
+        <th>Gender</th>
+        <th>Comorbidities</th>
+        <th>Specificatons</th>
+    </tr>
+  {% for row in rows %}
+    <tr class="info">
+        <td>{{ row["id"] }}</td>
+        <td>{{ row["name"] }}</td>
+        <td>{{ row["age"] }}</td>
+        <td>{{ row["email"] }}</td>
+        <td>{{ row["phone"] }}</td>
+        <td>{{ row["blood"] }}</td>
+        <td>{{ row["gender"] }}</td>
+        <td>{{ row["comor"] }}</td>
+        <td>{{ row["specs"] }}</td>
+    </tr>
+  {% endfor %}
+</table>
+<br /><br />
+<div class="card">
+  <div class="card-header">
+    Self assessment
+  </div>
+  <div class="card-body">
+    <p class="card-text">Perodically take the self assessment test to check your health status</p>
+    <a style="font-size: 20px" href="/assess" class="btn btn-primary">Take the test</a>
+  </div>
+</div> 
+<div class="card">
+  <div class="card-header">
+    Dashboard
+  </div>
+  <div class="card-body">
+    <p class="card-text">Think all is well in your profile then proceed to dashboard to explore other features</p>
+    <a style="font-size: 20px" href="/dashboard" class="btn btn-primary">Back to dashboard</a>
+  </div>
+</div>
+<div class="card">
+  <div class="card-header">
+    Add new member
+  </div>
+  <div class="card-body">
+    <p class="card-text">Stay safe and stay healthy add your family members health records for their wellness</p>
+    <a style="font-size: 20px" href="/medicalhistory" class="btn btn-primary">Add details</a>
+  </div>
+</div>
+</div>
+</body>
+</html>
+

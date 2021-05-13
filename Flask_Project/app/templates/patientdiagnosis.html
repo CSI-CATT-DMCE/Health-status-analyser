@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Patient Diagnosis Record</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='patientdiag.css')}}">
+  </head>
+  <body>
+    <div class="testbox">
+      <form action="{{url_for('healthcare')}}" method="post">
+        <div class="banner">
+          <h1>Patient Diagnosis Record</h1>
+          <img src="">
+        </div>
+        <br/>
+        <fieldset>
+          <legend>Patient Information</legend>
+          <div class="item">
+            <label for="fname">Name of the patient<span>*</span></label>
+            <input id="fname" type="text" name="name" required/>
+          </div>
+          <div class="item">
+            <label for="phone">Symptoms as described by patient<span>*</span></label>
+            <input id="phone" type="text"   name="symptoms" required/>
+          </div>
+          <div class="item">
+            <label for="bdate">Birth date<span>*</span></label>
+            <input id="bdate" type="date" name="bdate" required/>
+            <i class="fas fa-calendar"></i>
+          </div>
+          </div>
+        </fieldset>
+        <br/>
+        <fieldset>
+          <legend>Diagnosis Information</legend>
+          <div class="item">
+            <label for="date">Date of visit<span>*</span></label>
+            <input id="date" type="date" name="date" required/>
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+           <div class="item">
+            <label for="fname">Month of visit<span>*</span></label>
+            <input id="fname" type="text" name="month" required/>
+          </div>
+          <div class="question">
+            <div class="question-answer">
+               <div class="item">
+            <label for="instructions">Dignosis given</label>
+            <textarea id="instructions" rows="3" name="diagnosis"></textarea>
+          </div>
+          </div>
+          <div class="item">
+            <label for="instructions">Additional tests required</label>
+            <textarea id="instructions" rows="3" name="tests"></textarea>
+          </div>
+        </fieldset>
+        <div class="btn-block">
+          <button type="submit" href="/">Submit</button>
+          <button onclick="window.print()">Print report</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
