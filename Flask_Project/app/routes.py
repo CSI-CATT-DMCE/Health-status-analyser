@@ -5,6 +5,11 @@ from app.models import User
 from flask_login import login_user, current_user, logout_user
 import sqlite3 as sql
 
+colors = [
+    "#F7464A", "#46BFBD", "#FDB45C", "#FEDCBA",
+    "#ABCDEF", "#DDDDDD", "#ABCABC", "#4169E1",
+    "#C71585", "#FF4500", "#FEDCBA", "#46BFBD"]
+
 @app.route("/")
 @app.route("/home")
 def home():
@@ -95,5 +100,68 @@ def meddata():
         con.commit()
     flash('Details recorded successfully','success')
     return render_template("dashboard.html")
+    con.close()
+    
+@app.route("/viewprofile",methods=["GET","POST"])
+def viewprofile():
+    profile = request.form["conf"]
+    con = sql.connect("medhistory.db")
+    con.row_factory = sql.Row
+    cur = con.cursor()
+    cur.execute("SELECT * FROM history WHERE name = ?",(profile,))
+    rows = cur.fetchall()
+    if len(rows) == 0:
+        return render_template("medhistory.html")
+    else:
+        return render_template("viewprofile.html",rows=rows)
+    con.close()
+
+@app.route("/admincheck",methods=["GET","POST"])
+def admincheck():
+    patientid = request.form["patientid"]
+    con = sql.connect("medhistory.db")
+    con.row_factory = sql.Row
+    cur = con.cursor()
+    cur.execute("SELECT * FROM history WHERE ID = ?",(patientid,))
+    rows = cur.fetchall()
+    return render_template("admincheck.html",rows=rows,patientid=patientid)
+    con.close()
+
+@app.route("/diagnosis",methods=["GET","POST"])
+def diagnosis():
+    return render_template("patientdiagnosis.html")
+
+@app.route("/healthcare",methods=["GET","POST"])
+def healthcare():
+    name = request.form["name"]
+    symptoms = request.form["symptoms"]
+    bdate = request.form["bdate"]
+    date = request.form["date"]
+    month = request.form["month"]
+    tests = request.form["tests"]
+    diagnosis = request.form["diagnosis"]
+    with sql.connect("admin.db") as con:
+        cur = con.cursor()
+        cur.execute("INSERT INTO admin (name,symptoms,bday,visit,diagmonth,tests,diagnosis) VALUES(?,?,?,?,?,?,?)",
+                    (name,symptoms,bdate,date,month,tests,diagnosis))
+        con.commit()
+    return render_template("admindashboard.html")
+    con.close()
+
+@app.route("/viewdata",methods=["GET","POST"])
+def viewdata():
+    diag = request.form["diag"]
+    labels = ['January','February','March','April','May','June','July','August','September','October','November','December']
+    values = []
+    con = sql.connect("admin.db")
+    con.row_factory = sql.Row 
+    cur = con.cursor()
+    cur.execute("SELECT COUNT(diagnosis) FROM admin WHERE diagnosis=? AND diagmonth='January' UNION ALL SELECT COUNT(diagnosis) FROM admin WHERE diagnosis=? AND diagmonth='February' UNION ALL SELECT COUNT(diagnosis) FROM admin WHERE diagnosis=? AND diagmonth='March' UNION ALL SELECT COUNT(diagnosis) FROM admin WHERE diagnosis=? AND diagmonth='April' UNION ALL SELECT COUNT(diagnosis) FROM admin WHERE diagnosis=? AND diagmonth='May'UNION ALL SELECT COUNT(diagnosis) FROM admin WHERE diagnosis=? AND diagmonth='June'UNION ALL SELECT COUNT(diagnosis) FROM admin WHERE diagnosis=? AND diagmonth='July'UNION ALL SELECT COUNT(diagnosis) FROM admin WHERE diagnosis=? AND diagmonth='August'UNION ALL SELECT COUNT(diagnosis) FROM admin WHERE diagnosis=? AND diagmonth='September'UNION ALL SELECT COUNT(diagnosis) FROM admin WHERE diagnosis=? AND diagmonth='October'UNION ALL SELECT COUNT(diagnosis) FROM admin WHERE diagnosis=? AND diagmonth='November'UNION ALL SELECT COUNT(diagnosis) FROM admin WHERE diagnosis=? AND diagmonth='November'UNION ALL SELECT COUNT(diagnosis) FROM admin WHERE diagnosis=? AND diagmonth='December'",(diag,diag,diag,diag,diag,diag,diag,diag,diag,diag,diag,diag,diag,))
+    rows = cur.fetchall()
+    for row in rows:
+        values.append(row[0])
+    line_labels = labels
+    line_values = values
+    return render_template('bar_chart.html',title='Patient Statistics',max=10,labels=line_labels,values=line_values,disease=diag)
     con.close()
 
