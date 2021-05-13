@@ -12,11 +12,21 @@ class User(db.Model, UserMixin):
     fullname = db.Column(db.String, nullable=False)
     email = db.Column(db.String, unique=True, nullable=False)
     tel = db.Column(db.String(10), unique=True, nullable=False)
-    image_file = db.Column(db.String(20), nullable=False, default ='default.jpg')
     password = db.Column(db.String(60), nullable=False)
 
     def __repr__(self):
-    	f"User('{self.fullname}', '{self.email}', '{self.tel}', '{self.image_file}')"
+    	f"User('{self.fullname}', '{self.email}', '{self.tel}')"
 
+
+
+class Doctor(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key=True)
+    fullname = db.Column(db.String, nullable=False)
+    email = db.Column(db.String, unique=True, nullable=False)
+    tel = db.Column(db.String(10), unique=True, nullable=False)
+    password = db.Column(db.String(60), nullable=False)
+
+    def __repr__(self):
+    	f"User('{self.fullname}', '{self.email}', '{self.tel}')"
 
         
