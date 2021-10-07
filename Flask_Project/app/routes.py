@@ -19,68 +19,24 @@ def home():
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     #TODO
-    if current_user.is_authenticated:
-        return redirect(url_for('home'))
-    form = RegistrationForm()
-    if form.validate_on_submit():
-        hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
-        user = User(fullname=form.fullname.data, email=form.email.data, tel=form.tel.data, password=hashed_password)
-        db.session.add(user)
-        db.session.commit()
-        flash('Your account has been created! You can now log in', 'success')
-        return redirect(url_for('login'))
-    return render_template('register.html', title='Register', form=form)
+    
 
 
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     #TODO
-    if current_user.is_authenticated:
-        return redirect(url_for('home'))
-    form = LoginForm()
-    if form.validate_on_submit():
-        user = User.query.filter_by(email=form.email.data).first()
-        if user and bcrypt.check_password_hash(user.password, form.password.data):
-            login_user(user, remember=form.remember.data)
-            flash('Log in successfully!', 'success')
-            return redirect(url_for('dashboard'))
-        else:
-            flash('Login Unsuccessful. Please check username and password', 'danger')
-    return render_template('login.html', title='Login', form=form)
+    
 
 @app.route("/docregister", methods=['GET', 'POST'])
 def docregister():
     #TODO
-    if current_user.is_authenticated:
-        return redirect(url_for('home'))
-    form = DocRegistrationForm()
-    if form.validate_on_submit():
-        hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
-        doctor = Doctor(fullname=form.fullname.data, email=form.email.data, tel=form.tel.data, password=hashed_password)
-        db.session.add(doctor)
-        db.session.commit()
-        flash('Your account has been created! You can now log in', 'success')
-        return redirect(url_for('doclogin'))
-    return render_template('docregister.html', title='Register', form=form)
-
+    
 
 @app.route("/doclogin", methods=['GET', 'POST'])
 def doclogin():
     #TODO
-    if current_user.is_authenticated:
-        return redirect(url_for('home'))
-    form = LoginForm()
-    if form.validate_on_submit():
-        doctor = Doctor.query.filter_by(email=form.email.data).first()
-        if doctor and bcrypt.check_password_hash(doctor.password, form.password.data):
-            login_user(doctor, remember=form.remember.data)
-            flash('Log in successfully!', 'success')
-            return redirect(url_for('dashboard'))
-        else:
-            flash('Login Unsuccessful. Please check username and password', 'danger')
-    return render_template('doclogin.html', title='Login', form=form)
-
+    
 
 @app.route("/logout")
 def logout():
@@ -152,6 +108,7 @@ def viewprofile():
 
 @app.route("/admincheck",methods=["GET","POST"])
 def admincheck():
+    #Database security
     patientid = request.form["patientid"]
     con = sql.connect("medhistory.db")
     con.row_factory = sql.Row
