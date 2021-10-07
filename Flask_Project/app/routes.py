@@ -18,6 +18,7 @@ def home():
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
+    #TODO
     if current_user.is_authenticated:
         return redirect(url_for('home'))
     form = RegistrationForm()
@@ -34,6 +35,7 @@ def register():
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
+    #TODO
     if current_user.is_authenticated:
         return redirect(url_for('home'))
     form = LoginForm()
@@ -49,6 +51,7 @@ def login():
 
 @app.route("/docregister", methods=['GET', 'POST'])
 def docregister():
+    #TODO
     if current_user.is_authenticated:
         return redirect(url_for('home'))
     form = DocRegistrationForm()
@@ -64,6 +67,7 @@ def docregister():
 
 @app.route("/doclogin", methods=['GET', 'POST'])
 def doclogin():
+    #TODO
     if current_user.is_authenticated:
         return redirect(url_for('home'))
     form = LoginForm()
