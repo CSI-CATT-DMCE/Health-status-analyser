@@ -5,7 +5,7 @@
 
 <h3><strong>1.2	Motivation</strong></h3>
 
-<li>To meet a solution to generalize and unify the health sector of our society at both ends</li>
+<li>Meeting a solution to generalize and unify the health sector of our society at both ends</li>
 <li>To overcome existing problems occurring in maintenance of patient’s information.</li>
 </ul><br>
 
