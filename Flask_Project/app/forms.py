@@ -6,19 +6,24 @@ from app.models import User, Doctor
 
 class RegistrationForm(FlaskForm):
     #FULL NAME,EMAIL,TELEPHONE,PASSWORD
+    #Take above parameters while registering a user
     
 
 class LoginForm(FlaskForm):
     #LOGIN WITH EMAIL,PASSWORD
+    #Take above parameters while logging in a user
    
 
 class DocRegistrationForm(FlaskForm):
     #FULL NAME,EMAIL,TELEPHONE,PASSWORD
+    # Take above parameters while registering a doctor
     
 
 
 class DocLoginForm(FlaskForm):
-    #LOGIN WITH EMAIL,PASSWORD
+    #LOGIN WITH EMAIL,PASSWORD 
+    #Take above parameters while logging in a doctor
+   
     
 
 
