@@ -24,6 +24,3 @@
 <li>CSS</li>
 <li>Bootstrap</li>
 
-<h3><strong>How to setup the project</strong></h3>
-<p>Fork the repository</p>
-<p>Clone your forked copy of the project</p>
