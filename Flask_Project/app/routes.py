@@ -19,6 +19,7 @@ def home():
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     #TODO
+    #User register
     
 
 
@@ -26,16 +27,19 @@ def register():
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     #TODO
+    #User login
     
 
 @app.route("/docregister", methods=['GET', 'POST'])
 def docregister():
     #TODO
+    #Doctor register
     
 
 @app.route("/doclogin", methods=['GET', 'POST'])
 def doclogin():
     #TODO
+    #Doctor login
     
 
 @app.route("/logout")
