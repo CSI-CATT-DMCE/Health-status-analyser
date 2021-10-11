@@ -24,3 +24,7 @@
 <li>CSS</li>
 <li>Bootstrap</li>
 
+<h3><strong>How to contribute to this project:</strong></h3>
+<li>Requirements</li>
+<p>Install all the libraries mentioned in requirments.txt</p>
+
