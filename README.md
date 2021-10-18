@@ -32,7 +32,7 @@
 <li>Requirements</li>
 <p>Install all the libraries mentioned in requirments.txt by running the following command </br> pip install -r requirements.txt</br></p>
 <li>Steps to run this project</li>
-<p>Fork this repository</br> Clone this repository by running following command :</br> git clone https://github.com/mak372/hacktober-repo.git</p>
+<p>Fork this repository</br> Clone this repository by running following command :</br> git clone https://github.com/CSI-CATT-DMCE/Health-status-analyser.git</p>
 <li> Now your done with the setup.</li>
 <p>Navigate to the folder where you have cloned the repo and type the following command </br>python run.py</p>
 
