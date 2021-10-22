@@ -18,28 +18,32 @@ def home():
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
-    #TODO
     #User register
+    return("TODO")
     
 
 
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
-    #TODO
     #User login
+    return("TODO")
+   
+
     
 
 @app.route("/docregister", methods=['GET', 'POST'])
 def docregister():
-    #TODO
     #Doctor register
+    return("TODO")
+    
     
 
 @app.route("/doclogin", methods=['GET', 'POST'])
 def doclogin():
-    #TODO
     #Doctor login
+    return("TODO")
+    
     
 
 @app.route("/logout")
