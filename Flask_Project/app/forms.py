@@ -5,24 +5,28 @@ from app.models import User, Doctor
 #CAN USE ABOVE IMPORTS OR OTHER IF PARTICIPANTS WANT 
 
 class RegistrationForm(FlaskForm):
-    #FULL NAME,EMAIL,TELEPHONE,PASSWORD
-    #Take above parameters while registering a user
+    #You can change the code below
+    print("FULL NAME,EMAIL,TELEPHONE,PASSWORD")
+    print("Take above parameters while registering a user")
     
 
 class LoginForm(FlaskForm):
-    #LOGIN WITH EMAIL,PASSWORD
-    #Take above parameters while logging in a user
+    #You can change the code below
+    print("LOGIN WITH EMAIL,PASSWORD")
+    print("Take above parameters while logging in a user")
    
 
 class DocRegistrationForm(FlaskForm):
-    #FULL NAME,EMAIL,TELEPHONE,PASSWORD
-    # Take above parameters while registering a doctor
+    #You can change the code below
+    print("FULL NAME,EMAIL,TELEPHONE,PASSWORD")
+    print("Take above parameters while registering a doctor")
     
 
 
 class DocLoginForm(FlaskForm):
-    #LOGIN WITH EMAIL,PASSWORD 
-    #Take above parameters while logging in a doctor
+    #You can change the code below
+    print("LOGIN WITH EMAIL,PASSWORD") 
+    print("Take above parameters while logging in a doctor")
    
     
 
