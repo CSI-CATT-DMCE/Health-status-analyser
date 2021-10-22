@@ -35,4 +35,5 @@
 <p>Install all the libraries mentioned in requirments.txt by running the command given below after navigating to the folder where you have cloned the repo</br> pip install -r requirements.txt</br></p>
 <li> Now your done with the setup.</li>
 <p>Navigate to the folder where you have cloned the repo and type the following command </br>python run.py</p>
-
+<br>
+<h4>Maintainers Makarand Bhalerao, Parth Nimbalkar</h4>
